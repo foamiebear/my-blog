@@ -1,9 +1,14 @@
 <template>
-  <Tutorial/>
+  <Tutorial />
 </template>
 
 <script>
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  async mounted() {
+    let res = await this.$axios.get('/api');
+
+    console.log(res.data);
+  },
 }
 </script>
